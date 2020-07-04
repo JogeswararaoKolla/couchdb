@@ -1,0 +1,62 @@
+
+Query Data from Couch using N1QL Query 
+
+Couchbase Server 
+open-source,distributed,NoSQL document-oreiented database optimized for interactive apps
+;used N1QL Query language                               
+
+
+Document-oreiented Database 
+Category of NoSQL databases that store all informaiton for an Object 
+within a document rather than in a table. 
+
+NoSQL Database Genereic term used for any non-relational database
+
+Relational Database 
+Generic term used for an database that stores data logically organized into relations 
+- tables with rows and columns 
+
+NoSQL Databases 
+  key-value stores -> document-oreiented databases -> Couchbase 
+  Graph Databases 
+
+Document-oreiented databases
+  Semi-structured Data 
+  Document as logic unit 
+  More flexible schemas 
+  Languages other than SQL; Couchbase uses N1QL 
+  Data for one entity in one document 
+  Metadata embedded in document structure 
+
+Relational Database 
+  Structured Data 
+  Relation (table) as logical unit 
+  Rigidly enforced schemas 
+  SQL-based access 
+  Data for one entity across tables 
+  Metadata (Schema,Constraints) reside outside relation 
+
+Couchbase Architecture 
+Data - Data representation 
+Couchbase stores data as items
+Each item is key and a value 
+We will have mutiple items (key value pairs) for an entity
+value must be either 
+- Binary
+- JSON Document 
+  Keys : UTF-8 strings, no spaces, <250 Bytes 
+    - Unique within the bucket 
+  Values : <20 MB, Binary or JSON
+    - Binary values can not be parsed or indexed, only retrieved by key 
+    - Documents refers to JSON value 
+      - Consist of attributes 
+      - Attribute values can be 
+        - Basic types : number, string, boolean
+        - Complex types : Array,embedded document  
+
+Architecture 
+Distributed Nature 
+
+
+
+
