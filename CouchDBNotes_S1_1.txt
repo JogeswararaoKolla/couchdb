@@ -7,10 +7,10 @@ open-source,distributed,NoSQL document-oreiented database optimized for interact
 
 
 Document-oreiented Database 
-Category of NoSQL databases that store all informaiton for an Object 
+Category of NoSQL databases that store all information for an Object 
 within a document rather than in a table. 
 
-NoSQL Database Genereic term used for any non-relational database
+NoSQL Database Generic term used for any non-relational database
 
 Relational Database 
 Generic term used for an database that stores data logically organized into relations 
@@ -40,7 +40,7 @@ Couchbase Architecture
 Data - Data representation 
 Couchbase stores data as items
 Each item is key and a value 
-We will have mutiple items (key value pairs) for an entity
+We will have multiple items (key value pairs) for an entity
 value must be either 
 - Binary
 - JSON Document 
@@ -53,9 +53,34 @@ value must be either
       - Attribute values can be 
         - Basic types : number, string, boolean
         - Complex types : Array,embedded document  
+ 
+Storage 
+Data items stored in Buckets 
+  - Couchbase buckets exists both in memory or disk 
+  - Ephemeral buckets: only in memory 
+Buckets are created and names by apps 
 
 Architecture 
+Each instance of Couchbase Server run several services 
+  - Data service 
+    - Data is stored and retrieved items by the keys 
+  - Query Service 
+    - Parse the N1Ql Query, Running the query and retrieving the data 
+  - Indexing service 
+  - Search service 
+  - Analytics
+  - Eventing  
+
+
 Distributed Nature 
+  Each Couchbase server instance runs on a node 
+  Multiple nodes can be combined into a cluster 
+  Cluster manager regulates all nodes 
+  Add, remove, update nodes without cluster going down
+    - Cluster adminstration can be done with web console 
+
+
+
 
 
 
