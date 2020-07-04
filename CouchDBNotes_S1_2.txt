@@ -1,0 +1,57 @@
+
+Sample JSON Document 
+  Key : airline_109
+  Value : {
+          "callsign": "ACE AIR",
+          "country": "United States",
+          "iata": "KO",
+          "icao": "AER",
+          "id": 109,
+          "name": "Alaska Central Express",
+          "type": "airline"
+          }
+
+  Meta-data of Document :
+    {
+    "meta": {
+    "id": "airline_109",
+    "rev": "1-1616cb1e508900000000000002000000",
+    "expiration": 0,
+    "flags": 33554432,
+    "type": "json" },
+    "xattrs": {} 
+    }
+  Key : airport_3537 
+  Value : {
+          "airportname": "Childress Muni",
+          "city": "Childress",
+          "country": "United States",
+          "faa": "CDS",
+          "geo": {
+                 "alt": 1954,
+                 "lat": 34.433781,
+                 "lon": -100.287992
+                 },
+          "icao": "KCDS",
+          "id": 3537,
+          "type": "airport",
+          "tz": "America/Chicago"
+}   
+
+Meta-data Document 
+  {
+  "meta": {
+    "id": "airport_3537",
+    "rev": "1-1616cb1e56f500000000000002000000",
+    "expiration": 0,
+    "flags": 33554432,
+    "type": "json"
+   },
+  "xattrs": {}
+  }
+
+Document Types 
+  Each document represent an entity in the travel-sample bucket 
+  type represents what type of entity this documents pertains too. 
+  Above sample documents "airport_3537" belongs to document type "airport"
+  "airline_109" belongs to document type "airline"

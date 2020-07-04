@@ -1,10 +1,8 @@
-
 Query Data from Couch using N1QL Query 
 
 Couchbase Server 
 open-source,distributed,NoSQL document-oreiented database optimized for interactive apps
 ;used N1QL Query language                               
-
 
 Document-oreiented Database 
 Category of NoSQL databases that store all information for an Object 
@@ -37,47 +35,53 @@ Relational Database
   Metadata (Schema,Constraints) reside outside relation 
 
 Couchbase Architecture 
-Data - Data representation 
-Couchbase stores data as items
-Each item is key and a value 
-We will have multiple items (key value pairs) for an entity
-value must be either 
-- Binary
-- JSON Document 
-  Keys : UTF-8 strings, no spaces, <250 Bytes 
+  Data - Data representation 
+  Couchbase stores data as items
+  Each item is key and a value 
+  We will have multiple items (key value pairs) for an entity
+  value must be either 
+  - Binary
+  - JSON Document 
+    Keys : UTF-8 strings, no spaces, <250 Bytes 
     - Unique within the bucket 
-  Values : <20 MB, Binary or JSON
-    - Binary values can not be parsed or indexed, only retrieved by key 
-    - Documents refers to JSON value 
-      - Consist of attributes 
-      - Attribute values can be 
+    Values : <20 MB, Binary or JSON
+      - Binary values can not be parsed or indexed, only retrieved by key 
+      - Documents refers to JSON value 
+        - Consist of attributes 
+        - Attribute values can be 
         - Basic types : number, string, boolean
         - Complex types : Array,embedded document  
  
-Storage 
-Data items stored in Buckets 
-  - Couchbase buckets exists both in memory or disk 
-  - Ephemeral buckets: only in memory 
-Buckets are created and names by apps 
+  Storage 
+  Data items stored in Buckets 
+    - Couchbase buckets exists both in memory or disk 
+    - Ephemeral buckets: only in memory 
+  Buckets are created and names by apps 
 
-Architecture 
-Each instance of Couchbase Server run several services 
-  - Data service 
+  Architecture 
+  Each instance of Couchbase Server run several services 
+    - Data service 
     - Data is stored and retrieved items by the keys 
-  - Query Service 
+    - Query Service 
     - Parse the N1Ql Query, Running the query and retrieving the data 
-  - Indexing service 
-  - Search service 
-  - Analytics
-  - Eventing  
+    - Indexing service 
+    - Search service 
+    - Analytics
+    - Eventing  
 
-
-Distributed Nature 
+  Distributed Nature 
   Each Couchbase server instance runs on a node 
   Multiple nodes can be combined into a cluster 
   Cluster manager regulates all nodes 
   Add, remove, update nodes without cluster going down
     - Cluster adminstration can be done with web console 
+  Various Data replication options are available
+    - Data can be evenly distributed across multiple nodes and also replicated
+    - can replicate across different data centers for maximum availability
+    - Node failure, node removal do not cause data loss 
+  Individual services can be distributed across multiple nodes 
+  High priority work loads can be distributed and scaled
+  
 
 
 
