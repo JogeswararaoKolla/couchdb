@@ -81,11 +81,3 @@ Couchbase Architecture
     - Node failure, node removal do not cause data loss 
   Individual services can be distributed across multiple nodes 
   High priority work loads can be distributed and scaled
-  
-
-
-
-
-
-
-

@@ -49,9 +49,94 @@ Meta-data Document
    },
   "xattrs": {}
   }
-
+Metadata
+  -rev parameter refers to document data update revision number.
+  -expiration refers to document expiration time.
+  -id parameter refers to document key.
 Document Types 
   Each document represent an entity in the travel-sample bucket 
   type represents what type of entity this documents pertains too. 
   Above sample documents "airport_3537" belongs to document type "airport"
   "airline_109" belongs to document type "airline"
+
+SELECT-FROM-WHERE CLAUSE in N1QL Query 
+
+Example relational  Data 
+orders -> table 
+id,product,qty,amount
+101,phone,1,800 
+102,book,2,20
+
+A bucket named orders containing the documents with named fields id,product,qty,amount
+Each row in the bucket represents an document.
+
+N1QL Sample query to select the id from orders for id 102.
+SELECT id from orders where id=102
+
+When you execute the Query the return format will be JSON Data
+ select { "name" : "Jogi"} as nameKey, {"address":"Phoenix"} as addressKey;
+ Query Results 
+ [
+  {
+    "addressKey": {
+      "address": "Phoenix"
+    },
+    "nameKey": {
+      "name": "Jogi"
+    }
+  }
+]
+
+Pagination of Query Results In N1QL
+
+SELECT name
+FROM `travel-sample`
+WHERE type="hotel"
+AND ANY n IN public_likes SATISFIES n LIKE "%Rick%" END
+order by name
+
+[
+  {
+    "name": "Bunchrew House Hotel"
+  },
+  {
+    "name": "Hotel Du Clocher"
+  },
+  {
+    "name": "Hotel Eldorado"
+  },
+  {
+    "name": "Hotel Le M"
+  },
+  {
+    "name": "Quality Inn"
+  },
+  {
+    "name": "The Bulls Head"
+  },
+  {
+    "name": "The Huntley"
+  }
+]
+
+order by default is asc 
+limit will restrict no of documents to be returned 
+limit clause value is strictly upper limit
+offset is used for documents to be skipped
+
+SELECT name
+FROM `travel-sample`
+WHERE type="hotel"
+AND ANY n IN public_likes SATISFIES n LIKE "%Rick%" END
+order by name 
+limit 2 
+offset 2
+
+[
+  {
+    "name": "Hotel Eldorado"
+  },
+  {
+    "name": "Hotel Le M"
+  }
+]
